@@ -9,79 +9,80 @@ A Django-powered web application to discover the best restaurants and dishes in 
 - Personalized welcome messages
 - Toast notifications for registration, login, errors
 - Smooth scrolling effects
-- Back-to-Top button for easy navigation
-- Fully responsive and mobile-friendly design
 
-🔍 **Search & Discovery**
-- Live search suggestions (A-Z food suggestions)
-- Category filters with icons (🍔 Fast Food, 🍤 Seafood, 🍰 Dessert, etc.)
-- Price tier badges (₱ - Affordable, ₱₱ - Moderate, ₱₱₱ - Expensive)
-- Open/Closed status indicators (green for open, red for closed)
+### Main Dashboard
+- Smart search with autocomplete suggestions
+- Category-based filtering system
+- Featured restaurant cards with hover effects
+- Menu preview with pricing information
 
-🏪 **Restaurant Details**
-- Image carousel for browsing restaurant photos
-- Complete menu with prices
-- Operating hours
-- Category tags and status badges
+### Restaurant Discovery
+- Detailed restaurant profiles
+- Image galleries and menus
+- Opening hours and location info
+- Category-based organization
 
-📱 **Authentication & Role-Based Access**
-- User registration with profile creation
-- Secure login/logout with automatic role-based redirection
-- Three dashboard types: Admin, Restaurant, and User
-- Role-based access control system
+### User System
+- Secure authentication (login/register)
+- Logout confirmation dialog
+- User-friendly error handling
+- Session management
 
-## Getting Started
+### Responsive Design
+- Mobile-first approach
+- Tablet and desktop optimized
+- Touch-friendly interactions
+- Fast loading animations
+
+## Technology Stack
+
+- **Backend**: Django 4.2+ (Python)
+- **Frontend**: HTML5, CSS3, Vanilla JavaScript
+- **Database**: SQLite (dev) / PostgreSQL (production)
+- **Styling**: Custom CSS with animations & gradients
+- **Icons**: Font Awesome 6
+- **Deployment**: Railway/Render ready
+
+## Quick Start
 
 ### Prerequisites
-- Python 3.8+
-- pip
+- Python 3.11+
+- Git
 
 ### Installation
 
-1. Navigate to the project directory:
+1. **Clone the repository:**
 ```bash
-cd "C:\Users\Christine Elaine\Desktop\my foodie app"
+git clone https://github.com/yourusername/foodie-finder-naval.git
+cd foodie-finder-naval
 ```
 
-2. Activate the virtual environment:
+2. **Create virtual environment:**
 ```bash
-.venv\Scripts\Activate.ps1
+python -m venv .venv
+# Windows:
+.venv\Scripts\activate
+# macOS/Linux:
+source .venv/bin/activate
 ```
 
-3. Run migrations (if not already done):
+3. **Install dependencies:**
+```bash
+pip install -r requirements.txt
+```
+
+4. **Setup database:**
 ```bash
 python manage.py migrate
-```
-
-4. Create a superuser (optional, already created):
-```bash
 python manage.py createsuperuser
 ```
 
-5. Start the development server:
+5. **Run development server:**
 ```bash
 python manage.py runserver
 ```
 
-6. Visit `http://127.0.0.1:8000/` in your browser
-
-### Admin Access
-- Admin Dashboard: `http://127.0.0.1:8000/console/`
-- Django Admin: `http://127.0.0.1:8000/admin/`
-- Username: `admin`
-- Password: `adminpass123`
-
-### Role-Based Dashboards
-- **Admin Dashboard**: Professional sidebar interface for system management
-- **Restaurant Dashboard**: Restaurant owners can manage their own restaurants
-- **User Dashboard**: Regular users see the main Foodie Finder interface
-- **Automatic Redirection**: Users are redirected based on their role after login
-
-## Usage
-
-1. **Register**: Fill out the registration form to create an account (defaults to 'user' role)
-2. **Login**: Enter your email and password - automatic redirection based on role:
-   - Admin users → Admin Dashboard with sidebar navigation
+6. **Visit:** `http://localhost:8000`
    - Restaurant users → Restaurant Dashboard for managing their restaurant
    - Regular users → Main Foodie Finder page
 3. **Admin Features**: Manage restaurants, users, and system overview
