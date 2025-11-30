@@ -7,8 +7,10 @@ from .settings import *
 DEBUG = config('DEBUG', default=False, cast=bool)
 SECRET_KEY = config('SECRET_KEY')
 
-# Allowed hosts
+# Allowed hosts - handle Render domains
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='').split(',')
+if not ALLOWED_HOSTS or ALLOWED_HOSTS == ['']:
+    ALLOWED_HOSTS = ['*']  # Fallback for initial deployment
 
 # Database
 DATABASES = {
